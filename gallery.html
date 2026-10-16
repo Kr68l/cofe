@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sweet Cafe — Галерея</title>
+  <link rel="stylesheet" href="../css/gallery.css">
+  <link rel="stylesheet" href="../css/accountDrawer.css" />
+  <script src="../js/translate.js" defer></script>
+  <script type="module" src="../js/password/accountDrawer.js"></script>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Cofe</div>
+
+  <div class="translate-wrapper">
+    <div class="lang-current" onclick="toggleLang()">UK</div>
+
+    <div class="lang-dropdown" id="lang-dropdown">
+      <a class="lang-item" onclick="changeLang('en')">English</a>
+      <!-- <a class="lang-item" onclick="changeLang('ru')">Русский</a>-->
+      <a class="lang-item" onclick="changeLang('uk')">Українська</a>
+      <a class="lang-item" onclick="changeLang('de')">Deutsch</a>
+    </div>
+  </div>
+
+  <button type="button" class="burger-btn" id="burger-btn" aria-label="Відкрити меню">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav>
+    <a href="index.html" data-i18n="nav_home">Головна</a>
+    <a href="index.html#team" data-i18n="nav_about">Про нас</a>
+    <a href="index.html#feedback-section" data-i18n="nav_reviews">Відгуки</a>
+    <a href="index.html#booking" data-i18n="nav_booking">Бронювання</a>
+    <a href="gallery.html" class = "active" data-i18n="nav_gallery">Галерея</a>
+    <a href="menu.html" data-i18n="nav_menu">Меню</a>
+    <a href="login/login.html" data-i18n="login" data-auth-link >Особистий кабінет</a>
+
+    <button type="button" class="account-open-btn" data-account-open hidden>
+      <span data-account-avatar-small>☕</span>
+    </button>
+    
+  </nav>
+
+  <a href="tel:+380970111111" class="phone">+380 97 011 1111</a>
+</header>
+
+<main class="gallery-page">
+  <div id = "container" class="container">
+
+    <h1 data-i18n="page-title" class="page-title">Галерея</h1>
+    <p  data-i18n= "page-subtitle" class="page-subtitle">Атмосфера нашого закладу</p>
+
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="https://res.cloudinary.com/djneaguov/image/upload/q_auto/f_auto/v1777064129/food_1_qoaanm.jpg" alt="Стол з їжею">
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://res.cloudinary.com/djneaguov/image/upload/q_auto/f_auto/v1777064128/zala_gallerie_3_jxxlvl.jpg" alt="Стол з їжею2">
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://res.cloudinary.com/djneaguov/image/upload/q_auto/f_auto/v1777064129/zala_gallerie_4_ilzwez.jpg" alt="Зала1">
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://res.cloudinary.com/djneaguov/image/upload/q_auto/f_auto/v1777064128/zala_gallerie_2_dcsyzv.jpg" alt="Зала2">
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://res.cloudinary.com/djneaguov/image/upload/q_auto/f_auto/v1777064128/zala_gallerie_1_nxltnf.jpg" alt="Зала3">
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<div class="footer-bottom" style="width: 100%; text-align: center; padding: 20px 0; border-top: 1px solid #ccc; margin-top: 20px;">
+  <p>© 2026 Cafe</p>
+</div>
+
+  <!-- Account drawer overlay -->
+<div class="account-overlay" id="account-overlay" hidden></div>
+
+<!-- Account drawer -->
+<aside class="account-drawer" id="account-drawer" aria-hidden="true">
+  <button type="button" class="account-drawer-close" id="account-drawer-close">
+    ×
+  </button>
+
+  <div class="account-drawer-header">
+    <div class="account-avatar" id="account-avatar">☕</div>
+
+    <h2 id="account-name">Користувач</h2>
+    <p id="account-email">user@email.com</p>
+  </div>
+
+  <div class="account-drawer-actions">
+    <button type="button" class="account-action" id="booking-history-btn">
+      <span>📅</span>
+      <div>
+        <strong>Історія бронювань</strong>
+        <small>Переглянути мої бронювання</small>
+      </div>
+    </button>
+
+    <button type="button" class="account-action" id="leave-comment-btn">
+      <span>💬</span>
+      <div>
+        <strong>Залишити коментар</strong>
+        <small>Поділитися враженнями</small>
+      </div>
+    </button>
+
+    <button type="button" class="account-action" id="rate-menu-btn">
+      <span>⭐</span>
+      <div>
+        <strong>Оцінити страви</strong>
+        <small>Поставити оцінку меню</small>
+      </div>
+    </button>
+  </div>
+
+  <div class="account-bookings" id="account-bookings" hidden>
+    <h3>Мої бронювання</h3>
+    <p class="empty-message">Поки що історія бронювань недоступна.</p>
+  </div>
+
+  <button type="button" class="account-logout-btn" id="account-logout-btn">
+    Вийти
+  </button>
+</aside>
+
+  <!--Логика бургер-меню -->
+<script>
+  const burgerBtn = document.getElementById("burger-btn");
+  const nav = document.querySelector("header nav");
+
+  if (burgerBtn && nav) {
+    burgerBtn.addEventListener("click", () => {
+      burgerBtn.classList.toggle("active");
+      nav.classList.toggle("open");
+    });
+  }
+</script>
+
+</body>
+</html>

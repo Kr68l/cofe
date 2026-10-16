@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/submit-booking",
+      "destination": "/api/index.py"
+    }
+  ]
+}

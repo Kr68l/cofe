@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cofe</title>
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/accountDrawer.css" />
+  
+  <script src="../js/translate.js" defer></script> 
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script type="module" src="../js/password/accountDrawer.js"></script>
+</head>
+
+
+<body>
+  <header>
+    <div class="logo">Cofe</div>
+    
+    <div class="translate-wrapper">
+      <div class="lang-current" onclick="toggleLang()">UK</div>
+      
+      <div class="lang-dropdown" id="lang-dropdown">
+       <!-- <span class="dropdown-title">Language</span>--> 
+        <a class="lang-item" onclick="changeLang('en')">English</a>
+        <!-- <a class="lang-item" onclick="changeLang('ru')">Русский</a>--> 
+        <a class="lang-item" onclick="changeLang('uk')">Українська</a>
+        <a class="lang-item" onclick="changeLang('de')">Deutsch</a>
+      </div>
+    </div>
+
+    <button type="button" class="burger-btn" id="burger-btn" aria-label="Відкрити меню">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav>
+      <a href="#hero" data-i18n="nav_home">Головна</a>
+      <a href="#team" data-i18n="nav_about">Про нас</a>
+      <a href="#feedback-section" data-i18n="nav_reviews">Відгуки</a>
+      <a href="#booking" data-i18n="nav_booking">Бронювання</a>
+      <a href="gallery.html" data-i18n="nav_gallery">Галерея</a> 
+      <a href="menu.html" data-i18n="nav_menu">Меню</a>
+      <a href="login/login.html" data-i18n="login" data-auth-link >Особистий кабінет</a>
+
+      <button type="button" class="account-open-btn" data-account-open hidden>
+        <span data-account-avatar-small>☕</span>
+      </button>
+    </nav>
+
+    <div class="phone">+380 97 011 1111</div>
+  </header>
+
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <h1 data-i18n="hero_title">Ласкаво просимо!</h1>
+      <p data-i18n="hero_desc">
+        У нас ви знайдете бельгійські вафлі, пасти, бургери, гарячі страви та десерти,
+        які готуються з любов’ю і турботою.
+      </p>
+      <a href="#booking" class="btn" data-i18n="book_btn">Забронювати столик</a>
+    </div>
+  </section>
+  
+  <section id="team" class="team">
+    <div class="team__content">
+      <h1 class="team__title" data-i18n="team_title">Команда — це відповідальність</h1>
+  
+      <p class="team__text" data-i18n="team_text">
+        Не лише один за одного, але і за смаки та гастро враження...
+      </p>
+  
+      <div class="team__info">
+        <div class="team__hours">
+          <span data-i18n="team_work_everyday">Працюємо щодня</span>
+          <p data-i18n="team_hours_days">Пн-Пт з 8:00 до 22:00; Сб-Нд з 9:00 до 22:00</p>
+        </div>
+  
+        <div class="team__location">
+          <p data-i18n="team_city">м. Харків</p>
+          <p data-i18n="team_street">вул. Коцюбинського 25</p>
+        </div>  
+        <a href="#booking" class="team__btn" data-i18n="book_btn">Забронювати столик</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="feedback-section" class="feedback-section">
+    <div class="swiper feedback-slider">
+        <div class="swiper-wrapper">
+            
+            <div class="swiper-slide">
+                <div class="feedback-card">
+                    <div class="card-photo">
+                        <img src="https://res.cloudinary.com/djneaguov/image/upload/q_auto/f_auto/v1776953820/%D0%9D%D1%96%D0%BA%D0%B0_lgukmp.jpg" alt="Olena">
+                    </div>
+                    <div class="card-info">
+                        <p class="card-text" data-i18n="review_1_text">Чудове місце для сніданку! Меню різноманітне, а панкейки просто тануть у роті. Обслуговування швидке та привітне. Обов'язково повернуся ще раз.</p>
+                        <p class="card-author" data-i18n="review_1_author">Олена Коваль</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="feedback-card">
+                    <div class="card-photo">
+                        <img src="https://res.cloudinary.com/djneaguov/image/upload/q_auto/f_auto/v1776953818/%D0%BA%D1%96%D1%80%D0%B0_nus74s.jpg" alt="Oksana">
+                    </div>
+                    <div class="card-info">
+                        <p class="card-text" data-i18n="review_2_text">Заклад сподобався відразу, як тільки переступили через поріг. Чистота, атмосфера, посмішки персоналу. Їжа смачна, кава смачна, навіть нашому домашньому улюбленцю приділили увагу.</p>
+                        <p class="card-author" data-i18n="review_2_author">Оксана Лаштаєва</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="feedback-card">
+                    <div class="card-photo"></div>
+                    <div class="card-info">
+                        <p class="card-text" data-i18n="review_3_text">Дуже круто! Все сподобалося.</p>
+                        <p class="card-author" data-i18n="review_3_author">Іван Іванов</p>
+                    </div>
+                </div>
+            </div>
+      
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+  </section>
+
+  <section id="booking" class="booking">
+    <div class="container">
+      <div class="booking-content">
+        <form id="bookingForm" class="booking-form">
+          <h1 data-i18n="booking_title">Забронюйте столик своєї мрії прямо зараз!</h1>
+  
+          <label data-i18n="form_label_name">ІМ'Я</label>
+          <input type="text" 
+          id="name" 
+          name="name" 
+          required 
+          data-i18n-placeholder="form_placeholder_name"
+          placeholder="Напишіть ваше ім'я">
+  
+          <label data-i18n="form_label_phone">КОНТАКТНИЙ НОМЕР</label>
+          <input type="text" 
+          id="phone" 
+          name="phone" 
+          required 
+          data-i18n-placeholder="form_placeholder_phone"
+          placeholder="Ваш номер телефону">
+  
+          <label data-i18n="form_label_details">ДЕТАЛІ РЕЗЕРВУ</label>
+          <input type="text" 
+          id="details" 
+          name="details" 
+          required 
+          data-i18n-placeholder="form_placeholder_details"
+          placeholder="Деталі (наприклад, дата, час)">
+  
+          <button type="submit" data-i18n="book_btn">Забронювати столик</button>
+        </form>
+  
+        <div class="booking-image">
+          <img src="https://res.cloudinary.com/djneaguov/image/upload/q_auto/f_auto/v1777025117/various-food-with-glass-wine_cpjkr6.jpg" alt="restaurant">
+        </div>
+      </div>
+    </div>
+  </section>
+
+<script>
+document.getElementById('bookingForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const form = this;
+    const submitBtn = form.querySelector('button[type="submit"]');
+    
+    submitBtn.textContent = 'Відправка...';
+    submitBtn.disabled = true;
+
+    const userId = localStorage.getItem('user_id'); 
+    
+    const formData = {
+    name: document.getElementById('name').value,
+    phone: document.getElementById('phone').value,
+    details: document.getElementById('details').value,
+    user_id: userId // Теперь мы передаем этот ID на сервер
+};
+
+    fetch('/submit-booking', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+     body: JSON.stringify(formData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if(data.status === 'success') {
+            alert('Дякуємо! Ваша заявка успішно відправлена.');
+            form.reset();
+        } else {
+            alert('Сталася помилка, спробуйте пізніше.');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Помилка сервера. Переконайтеся, що Flask запущений.');
+    })
+    .finally(() => {
+        submitBtn.textContent = 'Забронювати столик';
+        submitBtn.disabled = false;
+    });
+});
+</script>
+  
+  <footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-block">
+          <h3 data-i18n="footer_contacts_title">Контактні дані</h3>
+          <p data-i18n="footer_address">Kotsiubynskoho Street, 25, Kharkiv, Kharkiv region, 61000</p>
+          <p>+38097 011 1111</p>
+          <p>Example.@gmail.com</p>
+        </div>
+
+        <div class="footer-block">
+          <h3 data-i18n="footer_hours_title">Робочий час</h3>
+          <p id="day-1" data-i18n="day_1">Понеділок: 08:00 - 22:00</p>
+          <p id="day-2" data-i18n="day_2">Вівторок: 08:00 - 22:00</p>
+          <p id="day-3" data-i18n="day_3">Середа: 08:00 - 22:00</p>
+          <p id="day-4" data-i18n="day_4">Четвер: 08:00 - 22:00</p>
+          <p id="day-5" data-i18n="day_5">П’ятниця: 08:00 - 22:00</p>
+          <p id="day-6" data-i18n="day_6">Субота: 09:00 - 22:00</p>
+          <p id="day-0" data-i18n="day_0">Неділя: 09:00 - 22:00</p>
+        </div>
+
+      <div class="footer-block">
+        <h3 data-i18n="footer_social_title">Ми в соцмережах</h3>
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">Google</a>
+      </div>
+
+      <div class="footer-map">
+        <h3 data-i18n="footer_map_title">На карті</h3>
+      
+        <a href="https://www.google.com/maps/search/?api=1&query=вулиця+Коцюбинського+25+Харків" target="_blank" style="text-decoration: none;">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2564.123456789!2d36.22305!3d50.00945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4127a0e36506a77d%3A0x633469176378e93!2z0LLRg9C70LjRhtGPINCa0L7RhtGO0LHQvNC90YHRjNC60L7Qs9C9LCAyNSwg0KXQsNGA0LrRltCyLCDQpdCw0YDQutGW0LLRgdGM0LrQsCDQvtCx0LvQsNGB0YLRjCwgNjEwMDA!5e0!3m2!1suk!2sua!4v1713965500000!5m2!1suk!2sua" 
+            width="100%" 
+            height="200" 
+            style="border:0; cursor: pointer;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </a>
+      
+        <a href="https://www.google.com/maps/dir/?api=1&destination=вулиця+Коцюбинського+25+Харків" target="_blank" style="text-decoration: none;">
+          <button class="map-btn" style="width: 100%; cursor: pointer;" data-i18n="footer_map_btn">Отримати розташування</button>
+        </a>
+      </div>
+
+      <div class="footer-bottom" style="width: 100%; text-align: center; padding: 20px 0; border-top: 1px solid #ccc; margin-top: 20px;">
+          <p>© 2026 Cafe</p>
+      </div>
+    </div>
+  </footer>
+
+<!-- Account drawer overlay -->
+<div class="account-overlay" id="account-overlay" hidden></div>
+
+<!-- Account drawer -->
+<aside class="account-drawer" id="account-drawer" aria-hidden="true">
+  <button type="button" class="account-drawer-close" id="account-drawer-close">
+    ×
+  </button>
+
+  <div class="account-drawer-header">
+    <div class="account-avatar" id="account-avatar">☕</div>
+
+    <h2 id="account-name">Користувач</h2>
+    <p id="account-email">user@email.com</p>
+  </div>
+
+  <div class="account-drawer-actions">
+    <button type="button" class="account-action" id="booking-history-btn">
+      <span>📅</span>
+      <div>
+        <strong>Історія бронювань</strong>
+        <small>Переглянути мої бронювання</small>
+      </div>
+    </button>
+
+    <button type="button" class="account-action" id="leave-comment-btn">
+      <span>💬</span>
+      <div>
+        <strong>Залишити коментар</strong>
+        <small>Поділитися враженнями</small>
+      </div>
+    </button>
+
+    <button type="button" class="account-action" id="rate-menu-btn">
+      <span>⭐</span>
+      <div>
+        <strong>Оцінити страви</strong>
+        <small>Поставити оцінку меню</small>
+      </div>
+    </button>
+  </div>
+
+  <div class="account-bookings" id="account-bookings" hidden>
+    <h3>Мої бронювання</h3>
+    <p class="empty-message"></p>
+  </div>
+
+  <button type="button" class="account-logout-btn" id="account-logout-btn">
+    Вийти
+  </button>
+</aside>
+
+  <script>
+    // Инициализация Свайпера
+    const feedbackSwiper = new Swiper('.feedback-slider', {
+      loop: true,             
+      centeredSlides: true,  
+      slidesPerView: 'auto',  
+      spaceBetween: 20,    
+      speed: 800,           
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      loopedSlides: 3,     
+      watchSlidesProgress: true,
+      breakpoints: { 1024: { spaceBetween: 50 } }
+    });
+
+    // Подсветка текущего дня недели
+    const today = new Date().getDay();
+    const todayElement = document.getElementById('day-' + today);
+    if (todayElement) {
+      todayElement.style.fontWeight = 'bold';
+    }
+
+    // Подсветка активных пунктов меню при скролле
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('section'); 
+      const navLinks = document.querySelectorAll('nav a');   
+      let current = '';
+  
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (window.pageYOffset >= (sectionTop - 150)) {
+          current = section.getAttribute('id');
+        }
+      });
+  
+      navLinks.forEach(a => {
+        a.classList.remove('active'); 
+        if (a.getAttribute('href').includes(current)) {
+          a.classList.add('active');  
+        }
+      });
+    });
+  </script>
+  
+  <!--Логика бургер-меню -->
+  <script>
+  const burgerBtn = document.getElementById("burger-btn");
+  const nav = document.querySelector("header nav");
+
+  if (burgerBtn && nav) {
+    burgerBtn.addEventListener("click", () => {
+      burgerBtn.classList.toggle("active");
+      nav.classList.toggle("open");
+    });
+  }
+</script>
+
+</body>
+</html>

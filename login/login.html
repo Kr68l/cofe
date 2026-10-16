@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cofe — Вхід</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="../../css/authstyle.css" />
+  <script src="../../js/translate.js" defer></script>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">Cofe</div>
+
+    <div class="translate-wrapper">
+      <div class="lang-current" onclick="toggleLang()">UK</div>
+
+      <div class="lang-dropdown" id="lang-dropdown">
+        <a class="lang-item" onclick="changeLang('en')">English</a>
+         <!-- <a class="lang-item" onclick="changeLang('ru')">Русский</a> -->
+        <a class="lang-item" onclick="changeLang('uk')">Українська</a>
+        <a class="lang-item" onclick="changeLang('de')">Deutsch</a>
+      </div>
+    </div>
+
+    <button type="button" class="burger-btn" id="burger-btn" aria-label="Відкрити меню">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+
+    <nav>
+      <a href="../index.html#hero" data-i18n="nav_home">Головна</a>
+      <a href="../index.html#team" data-i18n="nav_about">Про нас</a>
+      <a href="../index.html#feedback-section" data-i18n="nav_reviews">Відгуки</a>
+      <a href="../index.html#booking" data-i18n="nav_booking">Бронювання</a>
+      <a href="../gallery.html" data-i18n="nav_gallery">Галерея</a>
+      <a href="../menu.html" data-i18n="nav_menu">Меню</a>
+      <a href="login/login.html" class="active"  data-i18n="login">Особистий кабінет</a>
+    </nav>
+
+    
+    <a href="tel:+380970111111" class="phone">+380 97 011 1111</a>
+  </header>
+
+<main class="auth-page">
+  <section class="auth-card">
+
+    <div class="auth-header">
+      <h1 data-i18n="Welcome">Ласкаво просимо</h1>
+      <p data-i18n="Log in or create an account">Увійдіть або створіть акаунт Cofe</p>
+    </div>
+
+    <div class="auth-tabs">
+      <button class="auth-tab active" data-form="login-form" data-i18n="Login">Вхід</button>
+      <button class="auth-tab" data-form="register-form" data-i18n="Registration">Реєстрація</button>
+    </div>
+
+    <!-- LOGIN -->
+    <form class="auth-form active" id="login-form">
+      <label>
+        Email
+        <input type="email"
+               id="login-email"
+               data-i18n-placeholder="login_email_placeholder"
+               placeholder="your@email.com"
+               required>
+      </label>
+
+      <div class="password-field">
+        <label>
+          <span data-i18n="password">Пароль</span>
+          <input type="password"
+                 id="login-password"
+                 data-i18n-placeholder="login_password_placeholder"
+                 placeholder="Ваш пароль"
+                 required>
+        </label>
+
+        <button type="button" class="password-toggle" data-target="login-password">
+          <i class="fa-solid fa-eye"></i>
+        </button>
+      </div>
+
+      <button type="submit" class="auth-main-btn" data-i18n="Sign in">
+        Увійти
+      </button>
+
+      <a href="forgot-password.html" class="auth-link" data-i18n="Forgot your password?">
+        Забули пароль?
+      </a>
+    </form>
+
+    <!-- REGISTER -->
+    <form class="auth-form" id="register-form">
+      <label>
+        <span data-i18n="Name">Ім’я</span>
+        <input type="text"
+               id="register-name"
+               data-i18n-placeholder="register_name_placeholder"
+               placeholder="Ваше ім’я"
+               required>
+      </label>
+
+      <label>
+        Email
+        <input type="email"
+               id="register-email"
+               data-i18n-placeholder="login_email_placeholder"
+               placeholder="your@email.com"
+               required>
+      </label>
+
+      <div class="password-field">
+        <label>
+          <span data-i18n="password">Пароль</span>
+          <input type="password"
+                 id="register-password"
+                 data-i18n-placeholder="register_password_placeholder"
+                 placeholder="Мінімум 6 символів"
+                 required>
+        </label>
+
+        <button type="button" class="password-toggle" data-target="register-password">
+          <i class="fa-solid fa-eye"></i>
+        </button>
+      </div>
+
+      <button type="submit" class="auth-main-btn" data-i18n="Sign up_2">
+        Зареєструватися
+      </button>
+    </form>
+
+    <p id="auth-message" class="auth-message"></p>
+
+    <div class="auth-divider">
+      <span data-i18n="or">або</span>
+    </div>
+
+    <div class="social-buttons">
+      <button class="social-btn" id="google-login">Google</button>
+      <button class="social-btn" id="apple-login">Apple</button>
+    </div>
+
+  </section>
+</main>
+
+<script type="module" src="../../js/password/auth.js"></script>
+<script src="../../js/password/passwordToggle.js"></script>
+
+<div class="footer-bottom" style="width: 100%; text-align: center; padding: 20px 0; border-top: 1px solid #ccc; margin-top: 20px;">
+  <p>© 2026 Cafe</p>
+</div>
+
+<!--Логика бургер-меню -->
+<script>
+  const burgerBtn = document.getElementById("burger-btn");
+  const nav = document.querySelector("header nav");
+
+  if (burgerBtn && nav) {
+    burgerBtn.addEventListener("click", () => {
+      burgerBtn.classList.toggle("active");
+      nav.classList.toggle("open");
+    });
+  }
+</script>
+
+</body>
+</html>

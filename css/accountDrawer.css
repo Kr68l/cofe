@@ -1,0 +1,304 @@
+/* ===== Account button in header ===== */
+
+.account-open-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #f5c400;
+  color: #111;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.account-open-btn:hover {
+  transform: scale(1.07);
+  background: #ffd633;
+}
+
+.account-open-btn[hidden] {
+  display: none;
+}
+
+/* ===== Overlay ===== */
+
+.account-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.45);
+
+  z-index: 998;
+}
+
+.account-overlay[hidden] {
+  display: none;
+}
+
+/* ===== Drawer ===== */
+
+.account-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  width: min(390px, 92vw);
+  height: 100vh;
+
+  background: #1f1f1f;
+  color: #f7f7f7;
+
+  z-index: 999;
+
+  padding: 24px 22px;
+
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.35);
+
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+
+  overflow-y: auto;
+}
+
+.account-drawer.open {
+  transform: translateX(0);
+}
+
+/* ===== Close button ===== */
+
+.account-drawer-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+
+  width: 34px;
+  height: 34px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+
+  font-size: 26px;
+  line-height: 1;
+
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.account-drawer-close:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: rotate(90deg);
+}
+
+/* ===== Header inside drawer ===== */
+
+.account-drawer-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 42px 0 26px;
+  margin-bottom: 18px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.account-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 84px;
+  height: 84px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #f5c400, #ffdf5d);
+  color: #111;
+
+  font-size: 34px;
+  font-weight: 800;
+
+  margin-bottom: 16px;
+
+  box-shadow: 0 8px 22px rgba(245, 196, 0, 0.25);
+}
+
+.account-drawer-header h2 {
+  margin: 0 0 6px;
+
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.account-drawer-header p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 14px;
+  text-align: center;
+  word-break: break-word;
+}
+
+/* ===== Action buttons ===== */
+
+.account-drawer-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  margin-top: 18px;
+}
+
+.account-action {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  width: 100%;
+
+  padding: 15px 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+
+  text-align: left;
+  cursor: pointer;
+
+  transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.account-action:hover {
+  background: rgba(255, 255, 255, 0.11);
+  border-color: rgba(245, 196, 0, 0.5);
+  transform: translateY(-2px);
+}
+
+.account-action span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 38px;
+  height: 38px;
+
+  border-radius: 14px;
+
+  background: rgba(245, 196, 0, 0.16);
+
+  font-size: 19px;
+}
+
+.account-action strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.account-action small {
+  display: block;
+
+  color: rgba(255, 255, 255, 0.62);
+
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+/* ===== Bookings block ===== */
+
+.account-bookings {
+  margin-top: 20px;
+  padding: 16px;
+
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.account-bookings[hidden] {
+  display: none;
+}
+
+.account-bookings h3 {
+  margin: 0 0 8px;
+
+  font-size: 18px;
+}
+
+.empty-message {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 14px;
+}
+
+/* ===== Logout button ===== */
+
+.account-logout-btn {
+  width: 100%;
+
+  margin-top: 22px;
+  padding: 14px 18px;
+
+  border: none;
+  border-radius: 18px;
+
+  background: #f5c400;
+  color: #111;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.account-logout-btn:hover {
+  background: #ffd633;
+  transform: translateY(-2px);
+}
+
+/* ===== Mobile ===== */
+
+@media (max-width: 600px) {
+  .account-drawer {
+    width: 100vw;
+    padding: 22px 18px;
+  }
+
+  .account-drawer-header {
+    padding-top: 48px;
+  }
+
+  .account-avatar {
+    width: 76px;
+    height: 76px;
+    font-size: 30px;
+  }
+
+  .account-drawer-header h2 {
+    font-size: 22px;
+  }
+}

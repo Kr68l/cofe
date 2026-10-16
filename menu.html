@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stories Cafe — Меню</title>
+  <link rel="stylesheet" href="../css/menu.css" />
+  <link rel="stylesheet" href="../css/accountDrawer.css" />
+  <script src="../js/menu.js" defer></script>
+  <script src="../js/translate.js" defer></script>
+  <script type="module" src="../js/password/accountDrawer.js"></script>
+  <script type="module" src="../js/menuRatings.js"></script>
+
+</head>
+<body>
+
+  <header>
+    <div class="logo">Cofe</div>
+
+    <div class="translate-wrapper">
+      <div class="lang-current" onclick="toggleLang()">UK</div>
+
+      <div class="lang-dropdown" id="lang-dropdown">
+        <a class="lang-item" onclick="changeLang('en')">English</a>
+        <!-- <a class="lang-item" onclick="changeLang('ru')">Русский</a>-->
+        <a class="lang-item" onclick="changeLang('uk')">Українська</a>
+        <a class="lang-item" onclick="changeLang('de')">Deutsch</a>
+      </div>
+    </div>
+
+    <button type="button" class="burger-btn" id="burger-btn" aria-label="Відкрити меню">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav>
+      <a href="index.html#hero" data-i18n="nav_home">Головна</a>
+      <a href="index.html#team" data-i18n="nav_about">Про нас</a>
+      <a href="index.html#feedback-section" data-i18n="nav_reviews">Відгуки</a>
+      <a href="index.html#booking" data-i18n="nav_booking">Бронювання</a>
+      <a href="gallery.html" data-i18n="nav_gallery">Галерея</a>
+      <a href="menu.html" class="active" data-i18n="nav_menu">Меню</a>
+      <a href="login/login.html" data-i18n="login" data-auth-link >Особистий кабінет</a>
+
+      <button type="button" class="account-open-btn" data-account-open hidden>
+        <span data-account-avatar-small>☕</span>
+      </button>
+    </nav>
+    
+    <a href="tel:+380970111111" class="phone">+380 97 011 1111</a>
+  </header>
+
+  <main>
+    <section id="menu-navigation_id" class="menu-navigation">
+      <div class="container">
+        <div class="top-categories">
+          <button data-i18n="top-category active" class="top-category active" data-category="food" data-target="food-section">
+            СТРАВИ 🥗
+          </button>
+          <button data-i18n="top-category_GETRÄNKE" class="top-category" data-category="drinks" data-target="drinks-section">
+            НАПОЇ ☕
+          </button>
+          <button data-i18n= "top-category_COCKTAILS" class="top-category" data-category="cocktails" data-target="cocktails-section">
+            КОКТЕЙЛІ 🍸
+          </button>
+          <button data-i18n= "top-category_DESSERTS" class="top-category" data-category="desserts" data-target="desserts-section">
+            ДЕСЕРТИ 🍰
+          </button>
+        </div>
+
+        <div class="subcategories-wrapper">
+          <div class="subcategories active" data-submenu="food">
+            <button  data-i18n= "subcategory active_breakfasts" class="subcategory active" data-target="breakfasts">СНІДАНКИ</button>
+            <button  data-i18n= "subcategory_salads" class="subcategory" data-target="salads">САЛАТИ</button>
+            <button data-i18n= "subcategory_soups" class="subcategory" data-target="soups">СУПИ</button>
+            <button data-i18n= "subcategory_pasta" class="subcategory" data-target="pasta">ПАСТА</button>
+          </div>
+
+          <div class="subcategories" data-submenu="drinks">
+            <button data-i18n="subcategory active_coffee" class="subcategory active" data-target="coffee">КАВА</button>
+            <button data-i18n="subcategory_tea" class="subcategory" data-target="tea">ЧАЙ</button>
+            <button data-i18n="subcategory_lemonades" class="subcategory" data-target="lemonades">ЛИМОНАДИ</button>
+            <button data-i18n="subcategory_freshes" class="subcategory" data-target="freshes">ФРЕШІ</button>
+          </div>
+
+          <div class="subcategories" data-submenu="cocktails">
+            <button  data-i18n="subcategory active_classic-cocktails" class="subcategory active" data-target="classic-cocktails">КЛАСИЧНІ</button>
+            <button  data-i18n="subcategory_signature-cocktails" class="subcategory" data-target="signature-cocktails">АВТОРСЬКІ</button>
+            <button  data-i18n="subcategory_nonalcoholic-cocktails" class="subcategory" data-target="nonalcoholic-cocktails">БЕЗАЛКОГОЛЬНІ</button>
+          </div>
+
+          <div class="subcategories" data-submenu="desserts">
+            <button  data-i18n="subcategory active_dessert-main" class="subcategory active" data-target="dessert-main">ДЕСЕРТИ 🍰</button>
+            <button  data-i18n="subcategory_sweet-waffles" class="subcategory" data-target="sweet-waffles">ВАФЛІ СОЛОДКІ</button>
+            <button  data-i18n="subcategory_bakery"class="subcategory" data-target="bakery">ВИПІЧКА</button>
+            <button data-i18n="subcategory_ice-cream" class="subcategory" data-target="ice-cream">МОРОЗИВО</button>
+            <button data-i18n="subcategory_cakes" class="subcategory" data-target="cakes">ТОРТИ</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu-section" id="food-section">
+      <div class="container">
+        <h2>Страви 🥗</h2>
+
+        <div class="menu-block" id="breakfasts">
+          <h3>Сніданки</h3>
+          <div class="cards">
+            <article class="card" data-dish-id="syrnyky-berry-sauce" data-dish-name = "Сирники з ягідним соусом">
+              <div class="card-image">
+                <img src="https://res.cloudinary.com/djneaguov/image/upload/q_auto/f_auto/v1776970891/syrnyky_lxj8vn.jpg" alt="Сирники">
+              </div>
+              <h4>Сирники з ягідним соусом</h4>
+              <p>Ніжні сирники з домашнім соусом та сметаною.</p>
+              <span>185 грн</span>
+              <details class="product-info">
+                <summary>Склад та алергени</summary>
+                <div class="product-info-content">
+                  <p><strong>Склад:</strong> сир кисломолочний, яйце, борошно, цукор, сметана, ягідний соус.</p>
+                  <p><strong>Алергени:</strong> молочні продукти, яйця, глютен.</p>
+                </div>
+              </details>
+            </article>
+
+            <article class="card" data-dish-id="cheese-omelette" data-dish-name="Омлет з сиром">
+              <div class="card-image">
+                <img src="https://res.cloudinary.com/djneaguov/image/upload/q_auto/f_auto/v1776970889/omlet_svas0c.jpg" alt="Омлет">
+              </div>
+              <h4>Омлет з сиром</h4>
+              <p>Легкий сніданок із зеленню та вершковим сиром.</p>
+              <span>160 грн</span>
+              <details class="product-info">
+                <summary>Склад та алергени</summary>
+                <div class="product-info-content">
+                  <p><strong>Склад:</strong> яйця, вершковий сир, зелень, томати, спеції.</p>
+                  <p><strong>Алергени:</strong> яйця, молочні продукти.</p>
+                </div>
+              </details>
+            </article>
+          </div>
+        </div>
+
+        <div class="menu-block" id="salads">
+          <h3>Салати</h3>
+          <div class="cards">
+            <article class="card" data-dish-id="caesar-chicken" data-dish-name="Цезар з куркою">
+              <div class="card-image">
+                <img src="https://res.cloudinary.com/djneaguov/image/upload/q_auto/f_auto/v1776970893/cesar_eackij.jpg" alt="Цезар з куркою">
+              </div>
+              <h4>Цезар з куркою</h4>
+              <p>Класичний салат з пармезаном та соусом.</p>
+              <span>210 грн</span>
+              <details class="product-info">
+                <summary>Склад та алергени</summary>
+                <div class="product-info-content">
+                  <p><strong>Склад:</strong> куряче філе, листя салату, сухарики, пармезан, соус Цезар.</p>
+                  <p><strong>Алергени:</strong> молочні продукти, яйця, глютен, риба (анчоуси в соусі).</p>
+                </div>
+              </details>              
+            </article>
+          </div>
+        </div>
+
+        <div class="menu-block" id="soups">
+          <h3>Супи</h3>
+          <div class="cards">
+            <article class="card"  data-dish-id="pumpkin-cream-soup" data-dish-name="Гарбузовий крем-суп">
+              <div class="card-image">
+                <img src="https://res.cloudinary.com/djneaguov/image/upload/q_auto/f_auto/v1776970891/garb_soup_re5ztv.jpg" alt="Гарбузовий суп">
+              </div>
+              <h4>Гарбузовий крем-суп</h4>
+              <p>Ніжний крем-суп із вершками та насінням.</p>
+              <span>175 грн</span>
+              <details class="product-info">
+                <summary>Склад та алергени</summary>
+                <div class="product-info-content">
+                  <p><strong>Склад:</strong> гарбуз, вершки, цибуля, часник, оливкова олія, спеції.</p>
+                  <p><strong>Алергени:</strong> молочні продукти.</p>
+                </div>
+              </details>                
+            </article>
+          </div>
+        </div>
+
+        <div class="menu-block" id="pasta">
+          <h3>Паста</h3>
+          <div class="cards">
+            <article class="card"  data-dish-id="pasta-carbonara" data-dish-name="Паста Карбонара">
+                <div class="card-image">
+                  <img src="https://res.cloudinary.com/djneaguov/image/upload/q_auto/f_auto/v1776970890/pasts_carb_rlxmfh.jpg" alt="Паста Карбонара">
+                </div>
+                <h4>Паста Карбонара</h4>
+                <p>Класична паста у вершковому соусі.</p>
+                <span>245 грн</span>
+                <details class="product-info">
+                  <summary>Склад та алергени</summary>
+                  <div class="product-info-content">
+                    <p><strong>Склад:</strong> паста, бекон, яйця, вершки, пармезан, чорний перець.</p>
+                    <p><strong>Алергени:</strong> глютен, яйця, молочні продукти.</p>
+                  </div>
+                </details>              
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu-section" id="drinks-section">
+      <div class="container">
+        <h2>Напої ☕</h2>
+
+        <div class="menu-block" id="coffee">
+          <h3>Кава</h3>
+          <div class="cards">
+            <article class="card" data-dish-id="cappuccino" data-dish-name="Капучино">
+              <div class="card-image">
+                <img src="https://res.cloudinary.com/djneaguov/image/upload/q_auto/f_auto/v1776970891/capuccimo_cr4kqz.jpg" alt="Капучино">
+              </div>              
+              <h4>Капучино</h4>
+              <p>Класичний напій на основі еспресо та молока.</p>
+              <span>95 грн</span>
+              <details class="product-info">
+                <summary>Склад та алергени</summary>
+                <div class="product-info-content">
+                  <p><strong>Склад:</strong> еспресо, молоко.</p>
+                  <p><strong>Алергени:</strong>молочні продукти.</p>
+                </div>
+              </details>               
+            </article>
+          </div>
+        </div>
+
+        <div class="menu-block" id="tea">
+          <h3>Чай</h3>
+          <div class="cards">
+            <article class="card" data-dish-id="jasmine-tea" data-dish-name="Жасминовий чай">
+              <div class="card-image">
+                <img src="https://res.cloudinary.com/djneaguov/image/upload/q_auto/f_auto/v1776970890/tea_jas_wndkul.png" alt="Жасминовий чай">
+              </div>              
+              <h4>Жасминовий чай</h4>
+              <p>Ароматний зелений чай з ніжним смаком.</p>
+              <span>90 грн</span>
+              <details class="product-info">
+                <summary>Склад та алергени</summary>
+                <div class="product-info-content">
+                  <p><strong>Склад:</strong> зелений чай з жасмином.</p>
+                  <p><strong>Алергени:</strong> відсутні.</p>
+                </div>
+              </details>               
+            </article>
+          </div>
+        </div>
+
+        <div class="menu-block" id="lemonades">
+          <h3>Лимонади</h3>
+          <div class="cards">
+            <article class="card" data-dish-id="strawberry-lemonade" data-dish-name="Полуничний лимонад">
+                <div class="card-image">
+                  <img src="https://res.cloudinary.com/djneaguov/image/upload/q_auto/f_auto/v1776970890/Strawberry_Lemonad_rieqrr.jpg" alt="Полуничний лимонад">
+                </div>              
+                <h4>Полуничний лимонад</h4>
+                <p>Освіжаючий лимонад з полуничним пюре.</p>
+                <span>125 грн</span>
+                <details class="product-info">
+                  <summary>Склад та алергени</summary>
+                  <div class="product-info-content">
+                    <p><strong>Склад:</strong> полуничне пюре, лимонний сік, вода, цукор.</p>
+                    <p><strong>Алергени:</strong> можливі сліди ягід.</p>
+                  </div>
+                </details>              
+            </article>
+          </div>
+        </div>
+
+        <div class="menu-block" id="freshes">
+          <h3>Фреші</h3>
+          <div class="cards">
+            <article class="card" data-dish-id="orange-fresh" data-dish-name="Апельсиновий фреш">
+              <div class="card-image">
+                <img src="https://res.cloudinary.com/djneaguov/image/upload/q_auto/f_auto/v1776970893/Orange_fresh_kug82l.jpg" alt="Апельсиновий фреш">
+              </div>              
+              <h4>Апельсиновий фреш</h4>
+              <p>Свіжовичавлений сік без додатків.</p>
+              <span>135 грн</span>
+              <details class="product-info">
+                <summary>Склад та алергени</summary>
+                <div class="product-info-content">
+                  <p><strong>Склад:</strong> свіжовичавлений апельсиновий сік.</p>
+                  <p><strong>Алергени:</strong> цитрусові.</p>
+                </div>
+              </details>              
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu-section" id="cocktails-section">
+      <div class="container">
+        <h2>Коктейлі 🍸</h2>
+
+        <div class="menu-block" id="classic-cocktails">
+          <h3>Класичні</h3>
+          <div class="cards">
+            <article class="card"  data-dish-id="mojito" data-dish-name="Mojito">
+              <div class="card-image">
+                <img src="https://res.cloudinary.com/djneaguov/image/upload/q_auto/f_auto/v1776970890/mojito_weu6zl.jpg" alt="Mojito">
+              </div>              
+              <h4>Mojito</h4>
+              <p>М’ята, лайм, содова та легка свіжість.</p>
+              <span>180 грн</span>
+              <details class="product-info">
+                <summary>Склад та алергени</summary>
+                <div class="product-info-content">
+                  <p><strong>Склад:</strong> лайм, м’ята, цукор, содова, ром.</p>
+                  <p><strong>Алергени:</strong> відсутні.</p>
+                </div>
+              </details>               
+            </article>
+          </div>
+        </div>
+
+        <div class="menu-block" id="signature-cocktails">
+          <h3>Авторські</h3>
+          <div class="cards">
+            <article class="card"  data-dish-id="pink-story" data-dish-name="Pink Story">
+              <div class="card-image">
+                <img src="https://res.cloudinary.com/djneaguov/image/upload/q_auto/f_auto/v1776970889/berry_cocktail_tvdk9u.jpg" alt="Pink Story">
+              </div>              
+              <h4>Pink Story</h4>
+              <p>Легкий ягідний коктейль у ніжному стилі кафе.</p>
+              <span>220 грн</span>
+              <details class="product-info">
+                <summary>Склад та алергени</summary>
+                <div class="product-info-content">
+                  <p><strong>Склад:</strong> ягідне пюре, сироп, лимонний сік, алкогольна основа.</p>
+                  <p><strong>Алергени:</strong> можливі сліди ягід.</p>
+                </div>
+              </details>              
+            </article>
+          </div>
+        </div>
+
+        <div class="menu-block" id="nonalcoholic-cocktails">
+          <h3>Безалкогольні</h3>
+          <div class="cards">
+            <article class="card" data-dish-id="tropical-fizz" data-dish-name="Tropical Fizz">
+              <div class="card-image">
+                <img src="https://res.cloudinary.com/djneaguov/image/upload/q_auto/f_auto/v1776970890/Tropical_Fizz_dv8fru.png" alt="Tropical Fizz">
+              </div>              
+              <h4>Tropical Fizz</h4>
+              <p>Яскравий фруктовий мікс без алкоголю.</p>
+              <span>165 грн</span>
+              <details class="product-info">
+                <summary>Склад та алергени</summary>
+                <div class="product-info-content">
+                  <p><strong>Склад:</strong> тропічні соки, сироп, газована вода.</p>
+                  <p><strong>Алергени:</strong> можливі сліди цитрусових.</p>
+                </div>
+              </details>               
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu-section" id="desserts-section">
+      <div class="container">
+        <h2>Десерти 🍰</h2>
+
+        <div class="menu-block" id="dessert-main">
+          <h3>Десерти</h3>
+          <div class="cards">
+            <article class="card" data-dish-id="tiramisu" data-dish-name="Тірамісу">
+              <div class="card-image">
+                <img src="https://res.cloudinary.com/djneaguov/image/upload/q_auto/f_auto/v1776970889/tiramisu_trw5wa.jpg" alt="Тірамісу">
+              </div>
+              <h4>Тірамісу</h4>
+              <p>Класичний ніжний десерт з маскарпоне.</p>
+              <span>165 грн</span>
+              <details class="product-info">
+                <summary>Склад та алергени</summary>
+                <div class="product-info-content">
+                  <p><strong>Склад:</strong> маскарпоне, яйця, цукор, кава, печиво савоярді, какао.</p>
+                  <p><strong>Алергени:</strong> яйця, молочні продукти, глютен.</p>
+                </div>
+              </details>               
+            </article>
+          </div>
+        </div>
+
+        <div class="menu-block" id="sweet-waffles">
+          <h3>Вафлі солодкі</h3>
+          <div class="cards">
+            <article class="card" data-dish-id="strawberry-waffle" data-dish-name="Вафля з полуницею">
+              <div class="card-image">
+                <img src="https://res.cloudinary.com/djneaguov/image/upload/q_auto/f_auto/v1776970890/strawberry-waffles_cvk8h5.jpg" alt="Вафля з полуницею">
+              </div>
+              <h4>Вафля з полуницею</h4>
+              <p>Вафля з кремом, ягодами та топінгом.</p>
+              <span>190 грн</span>
+              <details class="product-info">
+                <summary>Склад та алергени</summary>
+                <div class="product-info-content">
+                  <p><strong>Склад:</strong> вафельне тісто, яйця, молоко, полуниця, крем, сироп.</p>
+                  <p><strong>Алергени:</strong>  глютен, яйця, молочні продукти.</p>
+                </div>
+              </details>               
+            </article>
+          </div>
+        </div>
+
+        <div class="menu-block" id="bakery">
+          <h3>Випічка</h3>
+          <div class="cards">
+            <article class="card"  data-dish-id="almond-croissant" data-dish-name="Круасан мигдальний">
+              <div class="card-image">
+                <img src="https://res.cloudinary.com/djneaguov/image/upload/q_auto/f_auto/v1776970889/croissants_ceio6z.jpg" alt="Круасан мигдальний">
+              </div>
+              <h4>Круасан мигдальний</h4>
+              <p>Хрустка випічка з м’якою начинкою.</p>
+              <span>120 грн</span>
+              <details class="product-info">
+                <summary>Склад та алергени</summary>
+                <div class="product-info-content">
+                  <p><strong>Склад:</strong> листкове тісто, масло, мигдаль, цукор.</p>
+                  <p><strong>Алергени:</strong>   глютен, молочні продукти, горіхи.</p>
+                </div>
+              </details>                
+            </article>
+          </div>
+        </div>
+
+        <div class="menu-block" id="ice-cream">
+          <h3>Морозиво</h3>
+          <div class="cards">
+            <article class="card" data-dish-id="vanilla-ice-cream" data-dish-name="Пломбір ванільний">
+              <div class="card-image">
+                <img src="https://res.cloudinary.com/djneaguov/image/upload/q_auto/f_auto/v1776970889/ice_vanille_xskafa.jpg" alt="Пломбір ванільний">
+              </div>
+              <h4>Пломбір ванільний</h4>
+              <p>Ніжне вершкове морозиво.</p>
+              <span>95 грн</span>
+              <details class="product-info">
+                <summary>Склад та алергени</summary>
+                <div class="product-info-content">
+                  <p><strong>Склад:</strong> вершки, молоко, цукор, ваніль.</p>
+                  <p><strong>Алергени:</strong>  молочні продукти.</p>
+                </div>
+              </details>               
+            </article>
+            <article class="card" data-dish-id="strawberry-ice-cream" data-dish-name="Полуничне морозиво"> 
+              <div class="card-image"> 
+                <img src="https://res.cloudinary.com/djneaguov/image/upload/q_auto/f_auto/v1776970889/ice_strawberry_p8jkox.jpg" alt="Полуничне морозиво">
+              </div>              
+              <h4>Полуничне морозиво</h4>
+              <p>Легкий ягідний смак у ніжних тонах меню.</p>
+              <span>99 грн</span>
+              <details class="product-info">
+                <summary>Склад та алергени</summary>
+                <div class="product-info-content">
+                  <p><strong>Склад:</strong> вершки, молоко, полуничне пюре, цукор.</p>
+                  <p><strong>Алергени:</strong>  молочні продукти, ягоди.</p>
+                </div>
+              </details>              
+            </article>
+          </div>
+        </div>
+
+        <div class="menu-block" id="cakes">
+          <h3>Торти</h3>
+          <div class="cards">
+            <article class="card" data-dish-id="new-york-cheesecake" data-dish-name="Чізкейк Нью-Йорк">
+              <div class="card-image">
+                <img src="https://res.cloudinary.com/djneaguov/image/upload/q_auto/f_auto/v1776970892/cheesecake_myscdp.jpg" alt="Чізкейк Нью-Йорк">
+              </div>
+              <h4>Чізкейк Нью-Йорк</h4>
+              <p>Ніжна текстура та класичний смак.</p>
+              <span>175 грн</span>
+              <details class="product-info">
+                <summary>Склад та алергени</summary>
+                <div class="product-info-content">
+                  <p><strong>Склад:</strong> крем-сир, яйця, цукор, печиво, масло.</p>
+                  <p><strong>Алергени:</strong>  молочні продукти, яйця, глютен.</p>
+                </div>
+              </details>                
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="footer-bottom" style="width: 100%; text-align: center; padding: 20px 0; border-top: 1px solid #ccc; margin-top: 20px;">
+    <p>© 2026 Cafe</p>
+  </div>  
+
+  <!-- Account drawer overlay -->
+<div class="account-overlay" id="account-overlay" hidden></div>
+
+<!-- Account drawer -->
+<aside class="account-drawer" id="account-drawer" aria-hidden="true">
+  <button type="button" class="account-drawer-close" id="account-drawer-close">
+    ×
+  </button>
+
+  <div class="account-drawer-header">
+    <div class="account-avatar" id="account-avatar">☕</div>
+
+    <h2 id="account-name">Користувач</h2>
+    <p id="account-email">user@email.com</p>
+  </div>
+
+  <div class="account-drawer-actions">
+    <button type="button" class="account-action" id="booking-history-btn">
+      <span>📅</span>
+      <div>
+        <strong>Історія бронювань</strong>
+        <small>Переглянути мої бронювання</small>
+      </div>
+    </button>
+
+    <button type="button" class="account-action" id="leave-comment-btn">
+      <span>💬</span>
+      <div>
+        <strong>Залишити коментар</strong>
+        <small>Поділитися враженнями</small>
+      </div>
+    </button>
+
+    <button type="button" class="account-action" id="rate-menu-btn">
+      <span>⭐</span>
+      <div>
+        <strong>Оцінити страви</strong>
+        <small>Поставити оцінку меню</small>
+      </div>
+    </button>
+  </div>
+
+  <div class="account-bookings" id="account-bookings" hidden>
+    <h3>Мої бронювання</h3>
+    <p class="empty-message">Поки що історія бронювань недоступна.</p>
+  </div>
+
+  <button type="button" class="account-logout-btn" id="account-logout-btn">
+    Вийти
+  </button>
+</aside>
+
+<!--Логика бургер-меню -->
+<script>
+  const burgerBtn = document.getElementById("burger-btn");
+  const nav = document.querySelector("header nav");
+
+  if (burgerBtn && nav) {
+    burgerBtn.addEventListener("click", () => {
+      burgerBtn.classList.toggle("active");
+      nav.classList.toggle("open");
+    });
+  }
+</script>
+
+</body>
+</html>
