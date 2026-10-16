@@ -4,6 +4,9 @@ email: kira_rapota@icloud.com
 Nechai Nika Olegivna
 email: mejz698@gmail.com
 
+
+link to Vercel project:https://test-coffe-beta.vercel.app
+
 ## Project Goal
 The Cofe restaurant website is a web application designed for a modern restaurant. 
 **The platform allows users to:**
